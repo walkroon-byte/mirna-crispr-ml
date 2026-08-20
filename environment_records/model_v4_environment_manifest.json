@@ -1,0 +1,76 @@
+{
+  "record_type": "mirna-crispr-ml reproducibility manifest",
+  "recorded_at_local": "2026-08-20T20:33:44.614985+08:00",
+  "python_version": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Python314\\python.exe",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "system": "Windows",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "notebook_file": "C:\\Users\\paul\\mirna-crispr-ml\\最终模型（SVR+GB 8特征+新参数）_v4_audited.ipynb",
+  "working_directory": "C:\\Users\\paul\\mirna-crispr-ml",
+  "packages": {
+    "numpy": "2.5.1",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "ViennaRNA": "2.7.2",
+    "jupyter": "1.1.1",
+    "notebook": "7.6.1",
+    "nbformat": "5.11.0",
+    "nbclient": "0.11.0"
+  },
+  "module_import_status": {
+    "numpy": {
+      "status": "ok",
+      "file": "C:\\Users\\paul\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\__init__.py"
+    },
+    "pandas": {
+      "status": "ok",
+      "file": "C:\\Users\\paul\\AppData\\Roaming\\Python\\Python314\\site-packages\\pandas\\__init__.py"
+    },
+    "scipy": {
+      "status": "ok",
+      "file": "C:\\Users\\paul\\AppData\\Roaming\\Python\\Python314\\site-packages\\scipy\\__init__.py"
+    },
+    "sklearn": {
+      "status": "ok",
+      "file": "C:\\Users\\paul\\AppData\\Roaming\\Python\\Python314\\site-packages\\sklearn\\__init__.py"
+    },
+    "matplotlib": {
+      "status": "ok",
+      "file": "C:\\Users\\paul\\AppData\\Roaming\\Python\\Python314\\site-packages\\matplotlib\\__init__.py"
+    },
+    "RNA": {
+      "status": "ok",
+      "file": "C:\\Users\\paul\\AppData\\Roaming\\Python\\Python314\\site-packages\\RNA\\__init__.py"
+    }
+  },
+  "model": {
+    "cas_variant": "LbCas12a",
+    "feature_function": "extract_final_features_v4",
+    "feature_count_expected": 8,
+    "svr": {
+      "kernel": "rbf",
+      "C": 20,
+      "epsilon": 0.05,
+      "gamma": 0.05
+    },
+    "gradient_boosting": {
+      "n_estimators": 100,
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "random_state": 42
+    },
+    "cross_validation": "LeaveOneOut",
+    "ensemble": "mean(SVR, GradientBoostingRegressor)"
+  },
+  "reproducibility_notes": [
+    "The training data are 50 LbCas12a mismatch samples embedded in the notebook.",
+    "The dataset mainly varies mismatch position for one repeated spacer.",
+    "Row-wise LOO does not establish generalization to unseen crRNA spacers.",
+    "Record the notebook cell outputs and the exact input data file together with this manifest."
+  ]
+}

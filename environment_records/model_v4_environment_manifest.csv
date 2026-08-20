@@ -1,0 +1,27 @@
+﻿category,name,version_or_value
+runtime,record_type,mirna-crispr-ml reproducibility manifest
+runtime,recorded_at_local,2026-08-20T20:33:44.614985+08:00
+runtime,python_version,"3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]"
+runtime,python_executable,C:\Python314\python.exe
+runtime,platform,Windows-11-10.0.22631-SP0
+runtime,system,Windows
+runtime,machine,AMD64
+runtime,processor,"Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+runtime,notebook_file,C:\Users\paul\mirna-crispr-ml\最终模型（SVR+GB 8特征+新参数）_v4_audited.ipynb
+runtime,working_directory,C:\Users\paul\mirna-crispr-ml
+package,numpy,2.5.1
+package,pandas,3.0.5
+package,scipy,1.18.0
+package,scikit-learn,1.9.0
+package,matplotlib,3.11.1
+package,ViennaRNA,2.7.2
+package,jupyter,1.1.1
+package,notebook,7.6.1
+package,nbformat,5.11.0
+package,nbclient,0.11.0
+module_import,numpy,ok
+module_import,pandas,ok
+module_import,scipy,ok
+module_import,sklearn,ok
+module_import,matplotlib,ok
+module_import,RNA,ok
