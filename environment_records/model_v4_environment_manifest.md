@@ -1,12 +1,12 @@
 # Model v4 reproducible environment record
 
-Recorded at: 2026-08-20T20:33:44.614985+08:00
+Recorded at: 2026-09-19T11:41:35.922797+08:00
 
 ## Runtime
 
 - Python: 3.14.6
-- Executable: C:\Python314\python.exe
-- Platform: Windows-11-10.0.22631-SP0
+- Executable: C:\ProgramData\miniconda3\python.exe
+- Platform: Windows-11-10.0.26200-SP0
 
 ## Package versions
 
@@ -19,8 +19,8 @@ Recorded at: 2026-08-20T20:33:44.614985+08:00
 | matplotlib | 3.11.1 |
 | ViennaRNA | 2.7.2 |
 | jupyter | 1.1.1 |
-| notebook | 7.6.1 |
-| nbformat | 5.11.0 |
+| notebook | 7.6.2 |
+| nbformat | 5.11.1 |
 | nbclient | 0.11.0 |
 
 ## Model settings

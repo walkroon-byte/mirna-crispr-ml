@@ -1,0 +1,14 @@
+{
+  "ai_model": "cas12a",
+  "amplification_mode": "RPA",
+  "primary_target": "miR-29a-3p",
+  "exclusion_controls": ["miR-29b-3p", "miR-29c-3p"],
+  "guide_length_nt": 25,
+  "primer_length_nt": 30,
+  "context_nt": 10,
+  "primer_gc_fraction_bounds": [0.35, 0.6],
+  "required_pam": "TTTV",
+  "pam_strategy": "Introduce PAM using a verified 5-prime RPA primer overhang after guide orientation is selected.",
+  "rt_primer_5_to_3": "GTCGTATCCAGTGCAGGGTCCGAGGTATTCGCACTGGATACGACTAACCG",
+  "status": "proposed design input; wet-lab validation required"
+}
