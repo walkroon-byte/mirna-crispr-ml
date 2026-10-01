@@ -1,0 +1,142 @@
+[
+  {
+    "original_path": "cas12a_mismatch_data.csv",
+    "new_path": "data/raw/cas12a_mismatch_data.csv",
+    "original_name": "cas12a_mismatch_data.csv",
+    "new_name": "cas12a_mismatch_data.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "candidate_sequences_corrected.csv",
+    "new_path": "data/raw/candidate_sequences_corrected.csv",
+    "original_name": "candidate_sequences_corrected.csv",
+    "new_name": "candidate_sequences_corrected.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "final_predictions.csv",
+    "new_path": "data/processed/final_predictions.csv",
+    "original_name": "final_predictions.csv",
+    "new_name": "final_predictions.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "model_predictions.csv",
+    "new_path": "data/processed/model_predictions.csv",
+    "original_name": "model_predictions.csv",
+    "new_name": "model_predictions.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "ranked_crRNA.csv",
+    "new_path": "data/processed/ranked_crRNA.csv",
+    "original_name": "ranked_crRNA.csv",
+    "new_name": "ranked_crRNA.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "ranked_crRNA_v4.csv",
+    "new_path": "data/processed/ranked_crRNA_v4.csv",
+    "original_name": "ranked_crRNA_v4.csv",
+    "new_name": "ranked_crRNA_v4.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "ranked_crRNA_selectivity_v4.csv",
+    "new_path": "data/processed/ranked_crRNA_selectivity_v4.csv",
+    "original_name": "ranked_crRNA_selectivity_v4.csv",
+    "new_name": "ranked_crRNA_selectivity_v4.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "ranked_crRNA_selectivity_v4_corrected.csv",
+    "new_path": "data/processed/ranked_crRNA_selectivity_v4_corrected.csv",
+    "original_name": "ranked_crRNA_selectivity_v4_corrected.csv",
+    "new_name": "ranked_crRNA_selectivity_v4_corrected.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "最终模型（SVR+GB 8特征+新参数)_v3.ipynb",
+    "new_path": "notebooks/01_final_model_svr_gb_8features_v3.ipynb",
+    "original_name": "最终模型（SVR+GB 8特征+新参数)_v3.ipynb",
+    "new_name": "01_final_model_svr_gb_8features_v3.ipynb",
+    "action": "moved_and_renamed"
+  },
+  {
+    "original_path": "v4_audited_2.ipynb",
+    "new_path": "notebooks/02_v4_audited.ipynb",
+    "original_name": "v4_audited_2.ipynb",
+    "new_name": "02_v4_audited.ipynb",
+    "action": "moved_and_renamed"
+  },
+  {
+    "original_path": "v4_run_notebook_version.ipynb",
+    "new_path": "notebooks/03_v4_run_notebook_version.ipynb",
+    "original_name": "v4_run_notebook_version.ipynb",
+    "new_name": "03_v4_run_notebook_version.ipynb",
+    "action": "moved_and_renamed"
+  },
+  {
+    "original_path": "notebooks/04_final_model_audit_v2.ipynb",
+    "new_path": "notebooks/04_final_model_audit_v2.ipynb",
+    "original_name": "04_final_model_audit_v2.ipynb",
+    "new_name": "04_final_model_audit_v2.ipynb",
+    "action": "moved"
+  },
+  {
+    "original_path": "RPA Forward Primer.ipynb",
+    "new_path": "notebooks/05_rpa_forward_primer.ipynb",
+    "original_name": "RPA Forward Primer.ipynb",
+    "new_name": "05_rpa_forward_primer.ipynb",
+    "action": "moved_and_renamed"
+  },
+  {
+    "original_path": "model_performance.png",
+    "new_path": "results/figures/model_performance.png",
+    "original_name": "model_performance.png",
+    "new_name": "model_performance.png",
+    "action": "moved"
+  },
+  {
+    "original_path": "model_v2_performance.png",
+    "new_path": "results/figures/model_v2_performance.png",
+    "original_name": "model_v2_performance.png",
+    "new_name": "model_v2_performance.png",
+    "action": "moved"
+  },
+  {
+    "original_path": "model_v3_performance.png",
+    "new_path": "results/figures/model_v3_performance.png",
+    "original_name": "model_v3_performance.png",
+    "new_name": "model_v3_performance.png",
+    "action": "moved"
+  },
+  {
+    "original_path": "model_v4_performance.png",
+    "new_path": "results/figures/model_v4_performance.png",
+    "original_name": "model_v4_performance.png",
+    "new_name": "model_v4_performance.png",
+    "action": "moved"
+  },
+  {
+    "original_path": "model_v4_audit.png",
+    "new_path": "results/figures/model_v4_audit.png",
+    "original_name": "model_v4_audit.png",
+    "new_name": "model_v4_audit.png",
+    "action": "moved"
+  },
+  {
+    "original_path": "model_v4_audit_metrics.csv",
+    "new_path": "results/metrics/model_v4_audit_metrics.csv",
+    "original_name": "model_v4_audit_metrics.csv",
+    "new_name": "model_v4_audit_metrics.csv",
+    "action": "moved"
+  },
+  {
+    "original_path": "model_v4_error_by_mismatch_position.csv",
+    "new_path": "results/metrics/model_v4_error_by_mismatch_position.csv",
+    "original_name": "model_v4_error_by_mismatch_position.csv",
+    "new_name": "model_v4_error_by_mismatch_position.csv",
+    "action": "moved"
+  }
+]
