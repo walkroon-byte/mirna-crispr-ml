@@ -1,0 +1,186 @@
+[2026-10-01 19:06:13] ================================================================================
+[2026-10-01 19:06:13] 开始转换 EasyDesign 数据为 v4 格式
+[2026-10-01 19:06:13] ================================================================================
+[2026-10-01 19:06:13] 读取输入文件: /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/easydesign_processed.csv
+[2026-10-01 19:06:13] 原始数据: 10634 行
+[2026-10-01 19:06:13] 
+原始列名: ['dataset', 'guide_sequence', 'target_sequence', 'mismatches', 'activity', 'pathogen_type', 'guide_length']
+[2026-10-01 19:06:13] 
+前3行样本:
+[2026-10-01 19:06:13]               dataset             guide_sequence            target_sequence  mismatches  activity pathogen_type  guide_length
+0  EasyDesign_TableS2  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA           3  -2.39214   virus|human            25
+1  EasyDesign_TableS2  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA           3  -2.65145   virus|human            25
+2  EasyDesign_TableS2  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA           3  -3.13258   virus|human            25
+[2026-10-01 19:06:13] 
+开始转换...
+[2026-10-01 19:06:13]   已处理 1000 / 10634 行
+[2026-10-01 19:06:13]   已处理 2000 / 10634 行
+[2026-10-01 19:06:13]   已处理 3000 / 10634 行
+[2026-10-01 19:06:13]   已处理 4000 / 10634 行
+[2026-10-01 19:06:13]   已处理 5000 / 10634 行
+[2026-10-01 19:06:13]   已处理 6000 / 10634 行
+[2026-10-01 19:06:13]   已处理 7000 / 10634 行
+[2026-10-01 19:06:13]   已处理 8000 / 10634 行
+[2026-10-01 19:06:13]   已处理 9000 / 10634 行
+[2026-10-01 19:06:13]   已处理 10000 / 10634 行
+[2026-10-01 19:06:13] 
+转换完成! 共 10634 行
+[2026-10-01 19:06:13] 
+归一化活性值...
+[2026-10-01 19:06:13] 
+=== 转换后数据统计 ===
+[2026-10-01 19:06:13] 总行数: 10634
+[2026-10-01 19:06:13] 唯一 spacer 数量: 1357
+[2026-10-01 19:06:13] 平均序列长度: 25.0 nt
+[2026-10-01 19:06:13] 
+错配分布:
+[2026-10-01 19:06:13]   位置 0: 3342 条
+[2026-10-01 19:06:13]   位置 1: 294 条
+[2026-10-01 19:06:13]   位置 2: 336 条
+[2026-10-01 19:06:13]   位置 3: 332 条
+[2026-10-01 19:06:13]   位置 4: 318 条
+[2026-10-01 19:06:13]   位置 5: 304 条
+[2026-10-01 19:06:13]   位置 6: 322 条
+[2026-10-01 19:06:13]   位置 7: 331 条
+[2026-10-01 19:06:13]   位置 8: 311 条
+[2026-10-01 19:06:13]   位置 9: 318 条
+[2026-10-01 19:06:13] 
+活性值统计:
+[2026-10-01 19:06:13]   最小值: 0.0079
+[2026-10-01 19:06:13]   最大值: 0.7023
+[2026-10-01 19:06:13]   平均值: 0.0601
+[2026-10-01 19:06:13]   中位数: 0.0396
+[2026-10-01 19:06:13] 
+保存到: /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/easydesign_v4_format.csv
+[2026-10-01 19:06:13] ✓ 保存成功!
+[2026-10-01 19:06:13] 
+转换后数据样本 (前5行):
+[2026-10-01 19:06:13]                   spacer_seq                 target_seq  mismatch_pos  relative_activity
+0  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           0.063669
+1  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           0.047236
+2  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           0.027146
+3  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           0.047005
+4  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           0.048213
+[2026-10-01 19:06:13] 
+================================================================================
+[2026-10-01 19:06:13] 合并公开数据和原始数据
+[2026-10-01 19:06:13] ================================================================================
+[2026-10-01 19:06:13] 公开数据: 10634 行
+[2026-10-01 19:06:13] 原始数据: 80 行
+[2026-10-01 19:06:13] 合并后: 10714 行
+[2026-10-01 19:06:13] ✓ 保存到: /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/combined_v4_training_data.csv
+[2026-10-01 19:06:13] 
+=== 最终训练集统计 ===
+[2026-10-01 19:06:13] 总行数: 10714
+[2026-10-01 19:06:13] 唯一 spacer 数量: 1358
+[2026-10-01 19:06:13] 数据来源:
+[2026-10-01 19:06:13]   原始数据: 80 行 (0.7%)
+[2026-10-01 19:06:13]   公开数据: 10634 行 (99.3%)
+[2026-10-01 19:06:13] 
+================================================================================
+[2026-10-01 19:06:13] ✓ 所有转换完成!
+[2026-10-01 19:06:13] ================================================================================
+[2026-10-01 19:06:13] 
+生成的文件:
+[2026-10-01 19:06:13] 1. /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/easydesign_v4_format.csv
+[2026-10-01 19:06:13] 2. /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/combined_v4_training_data.csv
+[2026-10-01 19:06:13] 3. /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/conversion_log.txt
+[2026-10-01 19:06:13] 
+下一步:
+[2026-10-01 19:06:13] 1. 检查转换后的数据格式是否正确
+[2026-10-01 19:06:13] 2. 使用 combined_v4_training_data.csv 重新训练 v4 模型
+[2026-10-01 19:06:13] 3. 评估新模型在独立测试集上的性能
+[2026-10-01 20:33:00] ================================================================================
+[2026-10-01 20:33:00] 开始转换 EasyDesign 数据为 v4 格式 (改进版)
+[2026-10-01 20:33:00] ================================================================================
+[2026-10-01 20:33:00] 读取输入文件: /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/easydesign_processed.csv
+[2026-10-01 20:33:00] 原始数据: 10634 行
+[2026-10-01 20:33:00] 
+预过滤 gap 序列...
+[2026-10-01 20:33:00]   移除包含 gap 的序列: 740 条 (7.0%)
+[2026-10-01 20:33:00]   过滤后数据: 9894 行
+[2026-10-01 20:33:00] 
+原始列名: ['dataset', 'guide_sequence', 'target_sequence', 'mismatches', 'activity', 'pathogen_type', 'guide_length']
+[2026-10-01 20:33:00] 
+前3行样本:
+[2026-10-01 20:33:00]               dataset             guide_sequence            target_sequence  mismatches  activity pathogen_type  guide_length
+0  EasyDesign_TableS2  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA           3  -2.39214   virus|human            25
+1  EasyDesign_TableS2  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA           3  -2.65145   virus|human            25
+2  EasyDesign_TableS2  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA           3  -3.13258   virus|human            25
+[2026-10-01 20:33:00] 
+开始转换...
+[2026-10-01 20:33:00]   已处理 1000 / 9894 行
+[2026-10-01 20:33:00]   已处理 2000 / 9894 行
+[2026-10-01 20:33:00]   已处理 3000 / 9894 行
+[2026-10-01 20:33:00]   已处理 4000 / 9894 行
+[2026-10-01 20:33:00]   已处理 5000 / 9894 行
+[2026-10-01 20:33:00]   已处理 7000 / 9894 行
+[2026-10-01 20:33:00]   已处理 8000 / 9894 行
+[2026-10-01 20:33:00]   已处理 10000 / 9894 行
+[2026-10-01 20:33:00] 
+转换完成! 共 9894 行
+[2026-10-01 20:33:00] 
+归一化活性值...
+[2026-10-01 20:33:00] 
+=== 转换后数据统计 ===
+[2026-10-01 20:33:00] 总行数: 9894
+[2026-10-01 20:33:00] 唯一 spacer 数量: 1355
+[2026-10-01 20:33:00] 平均序列长度: 25.0 nt
+[2026-10-01 20:33:00] 
+错配分布:
+[2026-10-01 20:33:00]   位置 0: 3342 条
+[2026-10-01 20:33:00]   位置 1: 294 条
+[2026-10-01 20:33:00]   位置 2: 275 条
+[2026-10-01 20:33:00]   位置 3: 297 条
+[2026-10-01 20:33:00]   位置 4: 291 条
+[2026-10-01 20:33:00]   位置 5: 275 条
+[2026-10-01 20:33:00]   位置 6: 284 条
+[2026-10-01 20:33:00]   位置 7: 296 条
+[2026-10-01 20:33:00]   位置 8: 282 条
+[2026-10-01 20:33:00]   位置 9: 286 条
+[2026-10-01 20:33:00] 
+活性值统计:
+[2026-10-01 20:33:00]   最小值: 0.6017
+[2026-10-01 20:33:00]   最大值: 1.8597
+[2026-10-01 20:33:00]   平均值: 1.0940
+[2026-10-01 20:33:00]   中位数: 1.0705
+[2026-10-01 20:33:00] 
+保存到: /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/easydesign_v4_format.csv
+[2026-10-01 20:33:01] ✓ 保存成功!
+[2026-10-01 20:33:01] 
+转换后数据样本 (前5行):
+[2026-10-01 20:33:01]                   spacer_seq                 target_seq  mismatch_pos  relative_activity
+0  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           1.186443
+1  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           1.102725
+2  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           0.947393
+3  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           1.101350
+4  TTTGTTGGGGCGTCCTTAGACGCCA  TTTGTTGGGGCGTCCTTAGACGCCA             0           1.108462
+[2026-10-01 20:33:01] 
+================================================================================
+[2026-10-01 20:33:01] 合并公开数据和原始数据
+[2026-10-01 20:33:01] ================================================================================
+[2026-10-01 20:33:01] 公开数据: 9894 行
+[2026-10-01 20:33:01] 原始数据: 80 行
+[2026-10-01 20:33:01] 合并后: 9974 行
+[2026-10-01 20:33:01] ✓ 保存到: /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/combined_v4_training_data.csv
+[2026-10-01 20:33:01] 
+=== 最终训练集统计 ===
+[2026-10-01 20:33:01] 总行数: 9974
+[2026-10-01 20:33:01] 唯一 spacer 数量: 1356
+[2026-10-01 20:33:01] 数据来源:
+[2026-10-01 20:33:01]   原始数据: 80 行 (0.8%)
+[2026-10-01 20:33:01]   公开数据: 9894 行 (99.2%)
+[2026-10-01 20:33:01] 
+================================================================================
+[2026-10-01 20:33:01] ✓ 所有转换完成!
+[2026-10-01 20:33:01] ================================================================================
+[2026-10-01 20:33:01] 
+生成的文件:
+[2026-10-01 20:33:01] 1. /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/easydesign_v4_format.csv
+[2026-10-01 20:33:01] 2. /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/combined_v4_training_data.csv
+[2026-10-01 20:33:01] 3. /sessions/gifted-compassionate-hamilton/mnt/mirna-crispr-ml/data/processed_public_datasets/conversion_log.txt
+[2026-10-01 20:33:01] 
+下一步:
+[2026-10-01 20:33:01] 1. 检查转换后的数据格式是否正确
+[2026-10-01 20:33:01] 2. 使用 combined_v4_training_data.csv 重新训练 v4 模型
+[2026-10-01 20:33:01] 3. 评估新模型在独立测试集上的性能

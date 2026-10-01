@@ -1,0 +1,49 @@
+{
+  "model_version": "v5",
+  "training_date": "20261001_191337",
+  "n_samples_total": 3990,
+  "n_features": 8,
+  "feature_names": [
+    "mismatch_pos",
+    "ddg",
+    "is_purine_mismatch",
+    "is_transition",
+    "is_edge",
+    "pos_ddg_interaction",
+    "mismatch_score",
+    "seed_weight"
+  ],
+  "train_metrics": {
+    "rmse": 0.10056933424286606,
+    "mae": 0.046233310388880074,
+    "r2": 0.07081386767593856,
+    "pearson_r": 0.3190440337411387,
+    "pearson_p": 3.1341457992034865e-188,
+    "spearman_r": 0.4819488276500837,
+    "spearman_p": 0.0
+  },
+  "test_metrics": {
+    "rmse": 0.1264018078757863,
+    "mae": 0.053038591541509875,
+    "r2": 0.03799875488160642,
+    "pearson_r": 0.21943250811413434,
+    "pearson_p": 3.5470655909190236e-23,
+    "spearman_r": 0.4741685393105125,
+    "spearman_p": 2.2713235565264157e-112
+  },
+  "model_params": {
+    "svr": {
+      "kernel": "rbf",
+      "C": 20,
+      "epsilon": 0.05,
+      "gamma": 0.05
+    },
+    "gb": {
+      "n_estimators": 100,
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "random_state": 42
+    }
+  }
+}

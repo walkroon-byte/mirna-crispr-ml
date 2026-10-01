@@ -1,0 +1,55 @@
+{
+  "model_version": "v5.1",
+  "training_date": "20261001_203319",
+  "n_samples_total": 3990,
+  "n_features": 8,
+  "feature_names": [
+    "mismatch_pos",
+    "ddg",
+    "is_purine_mismatch",
+    "is_transition",
+    "is_edge",
+    "pos_ddg_interaction",
+    "mismatch_score",
+    "seed_weight"
+  ],
+  "train_metrics": {
+    "rmse": 0.1805525309023808,
+    "mae": 0.14424223781495255,
+    "r2": 0.23994613765865613,
+    "pearson_r": 0.49093395812728813,
+    "pearson_p": 0.0,
+    "spearman_r": 0.5094681123605113,
+    "spearman_p": 0.0
+  },
+  "test_metrics": {
+    "rmse": 0.18489226924029023,
+    "mae": 0.14724594824878104,
+    "r2": 0.2361204188867302,
+    "pearson_r": 0.48725102288560396,
+    "pearson_p": 1.8397122766466292e-119,
+    "spearman_r": 0.5152811901725355,
+    "spearman_p": 9.809615092026875e-136
+  },
+  "improvements": {
+    "normalization_method": "Z-score standardization",
+    "target_mean": 1.094,
+    "target_std": 0.208,
+    "gap_sequences_filtered": "pre-filtered in conversion step"
+  },
+  "model_params": {
+    "svr": {
+      "kernel": "rbf",
+      "C": 20,
+      "epsilon": 0.05,
+      "gamma": 0.05
+    },
+    "gb": {
+      "n_estimators": 100,
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "random_state": 42
+    }
+  }
+}
