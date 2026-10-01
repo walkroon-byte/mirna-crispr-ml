@@ -1,0 +1,204 @@
+{
+  "design_version": "v2",
+  "design_date": "2026-10-01",
+  "designer": "Claude (Anthropic AI)",
+  "project": "miR-29 family selective detection using RT-RPA-Cas12a",
+
+  "construct_design": {
+    "total_length_nt": 110,
+    "architecture": "5'-[Adapter]-[miRNA-derived]-[Adapter]-3'",
+    "adapter_5_prime": {
+      "sequence": "GTCGTATCCAGTGCAGGGTCCGAGGTATTCGACTAGCT",
+      "length_nt": 38,
+      "gc_content_percent": 52.6,
+      "source": "Modified stem-loop RT universal adapter"
+    },
+    "mirna_derived_region": {
+      "mir29a": "AATCGTGGTAACCGATTTCAGATGGTGCTA",
+      "mir29b": "ACATCGTAACACTGATTTCAAATGGTGCTA",
+      "mir29c": "AATCGTGGTAACCGATTTCAAATGGTGCTA",
+      "length_nt": 30,
+      "includes_mature_mirna_length_nt": 22,
+      "extension_from_pre_mirna_nt": 8
+    },
+    "adapter_3_prime": {
+      "sequence": "AGTGCGTACTCGAGGCATCGATCAGTACGGATCG",
+      "length_nt": 42,
+      "gc_content_percent": 52.4,
+      "source": "Custom non-homologous sequence"
+    }
+  },
+
+  "easydesign_parameters": {
+    "mode": "rpa",
+    "guide_length_nt": 25,
+    "primer_length_nt": 30,
+    "max_guide_mismatches": 0,
+    "max_primer_mismatches": 0,
+    "cas_variant": "LbCas12a",
+    "pam_sequence": "TTTV",
+    "input_file": "mir29a_extended_rt_cdna_v2.fasta",
+    "specificity_exclude_file": "mir29bc_extended_rt_cdna_v2.fasta",
+    "expected_design_space_nt": 110,
+    "minimum_required_space_nt": 85,
+    "design_space_margin_nt": 25
+  },
+
+  "command_to_run": "python bin/design.py --input ../../data/rt_cdna_designs/mir29a_extended_rt_cdna_v2.fasta --specific-against-fastas ../../data/rt_cdna_designs/mir29bc_extended_rt_cdna_v2.fasta --guide-length 25 --primer-length 30 --mode rpa --output ../../results/easydesign_mir29a_110nt_output.tsv --max-primer-mismatches 0 --max-guide-mismatches 0",
+
+  "rt_primers": {
+    "universal": {
+      "name": "RT-Primer-Universal",
+      "sequence": "AGTGCGTACTCGAGGCATCGATCAGTACGGATCG",
+      "length_nt": 35,
+      "tm_celsius": 62,
+      "works_for": ["miR-29a", "miR-29b", "miR-29c"]
+    },
+    "mir29a_specific": {
+      "name": "RT-Primer-miR29a-specific",
+      "sequence": "AGTGCGTACTCGAGGCATCGATCAGTACGGATCGTAACCG",
+      "length_nt": 41,
+      "tm_celsius": 64,
+      "specific_anchor_3prime": "TAACCG"
+    },
+    "mir29b_specific": {
+      "name": "RT-Primer-miR29b-specific",
+      "sequence": "AGTGCGTACTCGAGGCATCGATCAGTACGGATCGAACACU",
+      "length_nt": 41,
+      "tm_celsius": 63,
+      "specific_anchor_3prime": "AACACU"
+    },
+    "mir29c_specific": {
+      "name": "RT-Primer-miR29c-specific",
+      "sequence": "AGTGCGTACTCGAGGCATCGATCAGTACGGATCGTAACCG",
+      "length_nt": 41,
+      "tm_celsius": 64,
+      "specific_anchor_3prime": "TAACCG",
+      "note": "Same as miR-29a (shared 3' end)"
+    }
+  },
+
+  "key_differences": {
+    "mir29a_vs_mir29b": [
+      "Position 9 in mature miRNA: 29a=C, 29b=U",
+      "Position 18 in mature miRNA: 29a=G, 29b=A",
+      "3' end: 29a=UA, 29b=UU"
+    ],
+    "mir29a_vs_mir29c": [
+      "Position 9 in mature miRNA: 29a=C, 29c=U",
+      "3' end: identical (both UA)"
+    ],
+    "mir29b_vs_mir29c": [
+      "Position 18 in mature miRNA: 29b=A, 29c=G",
+      "3' end: 29b=UU, 29c=UA"
+    ]
+  },
+
+  "validation_requirements": {
+    "minimum_selectivity_ratio": 10,
+    "positive_controls": [
+      "Synthetic miR-29a standard (100 nM)",
+      "Synthetic miR-29b standard (100 nM)",
+      "Synthetic miR-29c standard (100 nM)"
+    ],
+    "negative_controls": [
+      "No template control (NTC)",
+      "No RT control (to check DNA contamination)",
+      "Non-target miRNA (e.g., miR-21)"
+    ],
+    "cross_reactivity_matrix": {
+      "anti_29a_crRNA_vs_29a": "Expected: HIGH signal",
+      "anti_29a_crRNA_vs_29b": "Expected: LOW/NO signal",
+      "anti_29a_crRNA_vs_29c": "Expected: LOW/NO signal",
+      "anti_29b_crRNA_vs_29a": "Expected: LOW/NO signal",
+      "anti_29b_crRNA_vs_29b": "Expected: HIGH signal",
+      "anti_29b_crRNA_vs_29c": "Expected: LOW/NO signal",
+      "anti_29c_crRNA_vs_29a": "Expected: LOW/NO signal",
+      "anti_29c_crRNA_vs_29b": "Expected: LOW/NO signal",
+      "anti_29c_crRNA_vs_29c": "Expected: HIGH signal"
+    }
+  },
+
+  "estimated_reagent_costs_usd": {
+    "synthetic_mirna_standards": {
+      "mir29a_100pmol": 300,
+      "mir29b_100pmol": 300,
+      "mir29c_100pmol": 300,
+      "subtotal": 900
+    },
+    "rt_primers": {
+      "universal_25nmol": 30,
+      "specific_primers_3x_25nmol": 90,
+      "subtotal": 120
+    },
+    "crrna_guides": {
+      "anti_29a_25nmol": 100,
+      "anti_29b_25nmol": 100,
+      "anti_29c_25nmol": 100,
+      "subtotal": 300
+    },
+    "rpa_primers": {
+      "forward_primers_3x_25nmol": 150,
+      "reverse_primers_3x_25nmol": 150,
+      "subtotal": 300
+    },
+    "total_estimated": 1620,
+    "note": "Prices are estimates. Check with your preferred supplier."
+  },
+
+  "next_steps": [
+    "1. Run EasyDesign with the 110 nt construct to get crRNA and RPA primer recommendations",
+    "2. Review EasyDesign output and select top-scoring designs",
+    "3. Order synthetic miRNA standards, RT primers, crRNA, and RPA primers",
+    "4. Optimize RT reaction conditions with synthetic standards",
+    "5. Optimize RPA amplification conditions",
+    "6. Optimize Cas12a cleavage reaction and reporter assay",
+    "7. Perform cross-reactivity testing with all three miR-29 family members",
+    "8. Validate selectivity ratio ≥10× for each target",
+    "9. If successful, test on real biological samples (cell lines or patient samples)"
+  ],
+
+  "references": {
+    "stem_loop_rt": "Chen et al. (2005) Nucleic Acids Res. 33(20):e179",
+    "cas12a_pam": "Zetsche et al. (2015) Cell 163(3):759-771",
+    "rpa_amplification": "Piepenburg et al. (2006) PLoS Biol. 4(7):e204",
+    "easydesign_tool": "https://github.com/scRNA-Compt/EasyDesign"
+  },
+
+  "design_notes": [
+    "The 110 nt construct provides 25 nt margin above the minimum 85 nt requirement",
+    "Universal adapters allow flexible primer design while maintaining miRNA specificity",
+    "The miRNA-derived region includes 8 nt extension from pre-miRNA to provide additional context",
+    "All three constructs (29a/b/c) have identical adapter sequences for consistency",
+    "GC content is balanced at ~52% for optimal RPA performance",
+    "PAM site will be automatically identified by EasyDesign within the construct",
+    "This design has NOT been wet-lab validated yet - experimental optimization will be required"
+  ],
+
+  "troubleshooting_guide": {
+    "if_easydesign_returns_zero_targets": [
+      "Option 1: Further extend construct to 120-150 nt",
+      "Option 2: Adjust adapter sequences to change GC content",
+      "Option 3: Relax parameters (allow 1 guide mismatch)",
+      "Option 4: Manually design guide and primers without EasyDesign"
+    ],
+    "if_low_rt_efficiency": [
+      "Increase RT primer concentration to 1 μM",
+      "Extend RT reaction time to 60 min",
+      "Check RNA quality and integrity",
+      "Use fresh SuperScript IV enzyme"
+    ],
+    "if_poor_rpa_amplification": [
+      "Optimize primer concentrations (200-800 nM range)",
+      "Adjust reaction temperature (35-42°C range)",
+      "Check for primer dimers using gel electrophoresis",
+      "Increase reaction time to 30-40 min"
+    ],
+    "if_poor_selectivity": [
+      "Use miRNA-specific RT primers instead of universal",
+      "Design longer guides (27-30 nt) to increase specificity",
+      "Lower Cas12a reaction temperature to 25°C (slower but more selective)",
+      "Redesign guide to position mismatch in seed region (positions 1-8)"
+    ]
+  }
+}

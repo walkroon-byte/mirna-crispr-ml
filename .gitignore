@@ -1,0 +1,53 @@
+# 数据文件 - 太大，不提交到 GitHub
+data/public_datasets/
+data/nucleaseq/
+data/Cas12a_nickase/
+data/EasyDesign/
+data/processed_public_datasets/*.csv
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 虚拟环境
+venv/
+env/
+ENV/
+conda_env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 模型文件（如果很大的话）
+models/*.h5
+models/*.pkl
+models/*.joblib
+
+# 日志文件
+*.log
+data/*/processing_log_*.txt
+data/*/download_log_*.txt
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE 配置
+.vscode/
+.idea/
+*.code-workspace
+
+# 大型 Excel/数据文件
+*.xlsx
+!data/rt_cdna_designs/*.xlsx
+data/**/*.fastq.gz
+data/**/*.fasta.gz

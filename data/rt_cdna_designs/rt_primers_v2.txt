@@ -1,0 +1,127 @@
+# RT Primer Sequences for miR-29 Detection v2
+
+## Design Date
+2026-10-01
+
+## Universal RT Primer (for all three miR-29 targets)
+
+### RT-Primer-Universal
+```
+5'-AGTGCGTACTCGAGGCATCGATCAGTACGGATCG-3'
+```
+- **Length:** 35 nt
+- **Function:** Reverse transcription primer with 3' adapter sequence
+- **Binding region:** 3' adapter region of RT-cDNA construct
+- **Notes:** This is a universal primer that works for all three miR-29 family members
+
+## miRNA-specific RT Primers (alternative design)
+
+If you need higher specificity, use these miRNA-specific RT primers:
+
+### RT-Primer-miR29a-specific
+```
+5'-AGTGCGTACTCGAGGCATCGATCAGTACGGATCGTAACCG-3'
+```
+- **Length:** 41 nt
+- **3' specific anchor:** `TAACCG` (complementary to miR-29a 3' end: `CGGUUA`)
+- **Tm:** ~64°C
+- **Use case:** Selective RT for miR-29a only
+
+### RT-Primer-miR29b-specific
+```
+5'-AGTGCGTACTCGAGGCATCGATCAGTACGGATCGAACACU-3'
+```
+- **Length:** 41 nt
+- **3' specific anchor:** `AACACU` (complementary to miR-29b 3' end: `AGUGUU`)
+- **Tm:** ~63°C
+- **Use case:** Selective RT for miR-29b only
+
+### RT-Primer-miR29c-specific
+```
+5'-AGTGCGTACTCGAGGCATCGATCAGTACGGATCGTAACCG-3'
+```
+- **Length:** 41 nt
+- **3' specific anchor:** `TAACCG` (complementary to miR-29c 3' end: `CGGUUA`)
+- **Tm:** ~64°C
+- **Use case:** Selective RT for miR-29c only
+- **Note:** Same as miR-29a because they share the same 3' end
+
+## RT Reaction Protocol
+
+### Reaction Mix (20 μL total)
+- RNA sample: 1-10 μL (containing miRNA)
+- RT primer: 500 nM (final concentration)
+- dNTP mix: 0.5 mM each
+- SuperScript IV RT: 200 U
+- 5× RT buffer: 4 μL
+- DTT: 5 mM
+- RNase inhibitor: 20 U
+- Nuclease-free water: to 20 μL
+
+### Reaction Conditions
+1. **Annealing:** 65°C for 5 min, then ice for 2 min
+2. **Reverse Transcription:** 50°C for 30 min
+3. **Inactivation:** 80°C for 10 min
+4. **Storage:** -20°C or proceed to RPA
+
+## Quality Control
+
+### Expected RT Product
+- **Template:** miRNA (22-23 nt)
+- **RT product:** cDNA with 5' adapter, miRNA-derived region, and 3' adapter
+- **Expected size:** ~110 nt
+
+### Verification
+Can be verified by:
+1. qPCR with adapter-specific primers
+2. Gel electrophoresis (run on 2% agarose or PAGE)
+3. Direct sequencing
+
+## Ordering Information
+
+### Recommended Supplier
+- **IDT (Integrated DNA Technologies)** - Standard desalting is sufficient
+- **GenScript** - More economical for bulk orders
+- **Sangon Biotech** (中国) - Local option, faster delivery
+
+### Modifications
+- **5' end:** Standard (no modification needed)
+- **3' end:** Standard (no modification needed)
+- **Purification:** Desalting (Standard)
+- **Scale:** 25 nmol (sufficient for ~500 reactions)
+
+### Estimated Cost
+- Universal primer: ~$20-30 USD
+- Specific primers (×3): ~$60-90 USD
+
+## Storage and Handling
+
+### Stock Solution
+- Resuspend in nuclease-free water to 100 μM
+- Aliquot into 10 μL portions
+- Store at -80°C (stable for >1 year)
+
+### Working Solution
+- Dilute to 10 μM in nuclease-free water
+- Store at -20°C (stable for 6 months)
+- Avoid freeze-thaw cycles (>5 times)
+
+## Troubleshooting
+
+### Low RT Efficiency
+- Check primer Tm and adjust annealing temperature
+- Increase RT primer concentration to 1 μM
+- Extend RT time to 60 min
+- Use fresh SuperScript IV enzyme
+
+### Non-specific Products
+- Use miRNA-specific RT primers instead of universal
+- Increase annealing temperature by 2-3°C
+- Add hot-start RT enzyme
+- Reduce RT primer concentration to 200 nM
+
+### No Product
+- Verify RNA quality (not degraded)
+- Check RT primer sequence (order confirmation)
+- Ensure proper thermocycler calibration
+- Try a positive control (synthetic miRNA standard)
