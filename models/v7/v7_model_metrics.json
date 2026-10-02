@@ -1,0 +1,24 @@
+{
+  "model_version": "v7",
+  "model_type": "deep_learning_hybrid",
+  "training_date": "20261001_213050",
+  "architecture": {
+    "sequence_branch": "One-hot (40,4) → Conv1D(64,128) → Bi-LSTM(64) → Dense(128)",
+    "feature_branch": "Features(20) → Dense(64,32)",
+    "fusion": "Concat(160) → Dense(128,64,32) → Output(1)",
+    "total_params": 194241
+  },
+  "test_metrics": {
+    "rmse": 0.13438414747684924,
+    "mae": 0.10169868916273117,
+    "r2": 0.6024457812309265,
+    "pearson_r": 0.7772501707077026,
+    "spearman_r": 0.7763276527054978
+  },
+  "comparison": {
+    "v5.1_spearman": 0.515,
+    "v6_spearman": 0.541,
+    "v7_spearman": 0.7763276527054978,
+    "improvement_vs_v6": "+43.5%"
+  }
+}

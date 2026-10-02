@@ -1,0 +1,99 @@
+{
+  "model_version": "v6",
+  "training_date": "20261001_210658",
+  "n_features": 20,
+  "feature_names": [
+    "mismatch_pos",
+    "ddg",
+    "is_purine_mismatch",
+    "is_transition",
+    "is_edge",
+    "pos_ddg_interaction",
+    "mismatch_score",
+    "seed_weight",
+    "spacer_gc_content",
+    "target_gc_content",
+    "gc_difference",
+    "poly_base_score",
+    "seed_region_mismatches",
+    "pam_proximal_mismatches",
+    "middle_region_mismatches",
+    "distal_region_mismatches",
+    "spacer_self_structure",
+    "target_self_structure",
+    "total_mismatches",
+    "mismatch_density"
+  ],
+  "feature_importances": {
+    "mismatch_pos": 0.3990441824715535,
+    "ddg": 0.03741491366557711,
+    "is_purine_mismatch": 0.005069748035928902,
+    "is_transition": 0.016061873613133052,
+    "is_edge": 0.025338751934096442,
+    "pos_ddg_interaction": 0.01351945277347786,
+    "mismatch_score": 0.0,
+    "seed_weight": 0.02894396299650206,
+    "spacer_gc_content": 0.013194525015699078,
+    "target_gc_content": 0.021853437213839987,
+    "gc_difference": 0.0,
+    "poly_base_score": 0.11782050384920607,
+    "seed_region_mismatches": 0.0,
+    "pam_proximal_mismatches": 0.0,
+    "middle_region_mismatches": 0.03070103675007966,
+    "distal_region_mismatches": 0.0,
+    "spacer_self_structure": 0.020361536212929462,
+    "target_self_structure": 0.01678298215114195,
+    "total_mismatches": 0.2538930933168349,
+    "mismatch_density": 0.0
+  },
+  "train_metrics": {
+    "rmse": 0.16444963896550793,
+    "mae": 0.12926621695952928,
+    "r2": 0.3694739152999962,
+    "pearson_r": 0.6136859152408113,
+    "pearson_p": 0.0,
+    "spearman_r": 0.6319100133108289,
+    "spearman_p": 0.0
+  },
+  "test_metrics": {
+    "rmse": 0.18167243278735773,
+    "mae": 0.1433383172034382,
+    "r2": 0.2624941668388827,
+    "pearson_r": 0.513591490018956,
+    "pearson_p": 1.038044631592642e-134,
+    "spearman_r": 0.5409968088219095,
+    "spearman_p": 4.594052531275443e-152
+  },
+  "improvements_from_v5.1": {
+    "new_features": [
+      "spacer_gc_content",
+      "target_gc_content",
+      "gc_difference",
+      "poly_base_score",
+      "seed_region_mismatches",
+      "pam_proximal_mismatches",
+      "middle_region_mismatches",
+      "distal_region_mismatches",
+      "spacer_self_structure",
+      "target_self_structure",
+      "total_mismatches",
+      "mismatch_density"
+    ],
+    "rationale": "Enhanced feature engineering with sequence composition, local region analysis, secondary structure, and multi-mismatch support"
+  },
+  "model_params": {
+    "svr": {
+      "kernel": "rbf",
+      "C": 20,
+      "epsilon": 0.05,
+      "gamma": 0.05
+    },
+    "gb": {
+      "n_estimators": 100,
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "random_state": 42
+    }
+  }
+}

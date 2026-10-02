@@ -1,0 +1,98 @@
+{
+  "model_version": "v6.1",
+  "training_date": "20261002_094218",
+  "n_features": 14,
+  "feature_names": [
+    "mismatch_pos",
+    "total_mismatches",
+    "poly_base_score",
+    "ddg",
+    "middle_region_mismatches",
+    "seed_weight",
+    "is_edge",
+    "target_gc_content",
+    "spacer_self_structure",
+    "target_self_structure",
+    "is_transition",
+    "pos_ddg_interaction",
+    "spacer_gc_content",
+    "is_purine_mismatch"
+  ],
+  "feature_importances": {
+    "mismatch_pos": 0.44909908322732367,
+    "total_mismatches": 0.2096833788473113,
+    "poly_base_score": 0.11782050384920663,
+    "ddg": 0.037414913665579266,
+    "middle_region_mismatches": 0.03070103675008081,
+    "seed_weight": 0.02894396299650197,
+    "is_edge": 0.019493565647848283,
+    "target_gc_content": 0.027100339159304588,
+    "spacer_self_structure": 0.022150060936749174,
+    "target_self_structure": 0.014994457427322718,
+    "is_transition": 0.01606187361313298,
+    "pos_ddg_interaction": 0.013519452773474912,
+    "spacer_gc_content": 0.00794762307023473,
+    "is_purine_mismatch": 0.005069748035928798
+  },
+  "train_metrics": {
+    "rmse": 0.16774488750126332,
+    "mae": 0.1322763367437882,
+    "r2": 0.3439517300116822,
+    "pearson_r": 0.5901267243134296,
+    "pearson_p": 0.0,
+    "spearman_r": 0.6103600864181031,
+    "spearman_p": 0.0
+  },
+  "test_metrics": {
+    "rmse": 0.18054878452353024,
+    "mae": 0.1428370608283899,
+    "r2": 0.27158893571111786,
+    "pearson_r": 0.5224666515874931,
+    "pearson_p": 3.711586665882041e-140,
+    "spearman_r": 0.5481654299600837,
+    "spearman_p": 7.124388236943775e-157
+  },
+  "improvements_from_v6": {
+    "method": "Feature selection - removed 6 zero-importance features",
+    "removed_features": [
+      "mismatch_score",
+      "gc_difference",
+      "seed_region_mismatches",
+      "pam_proximal_mismatches",
+      "distal_region_mismatches",
+      "mismatch_density"
+    ],
+    "kept_features": [
+      "mismatch_pos",
+      "total_mismatches",
+      "poly_base_score",
+      "ddg",
+      "middle_region_mismatches",
+      "seed_weight",
+      "is_edge",
+      "target_gc_content",
+      "spacer_self_structure",
+      "target_self_structure",
+      "is_transition",
+      "pos_ddg_interaction",
+      "spacer_gc_content",
+      "is_purine_mismatch"
+    ],
+    "rationale": "Reduce noise by removing features with 0% importance in v6"
+  },
+  "model_params": {
+    "svr": {
+      "kernel": "rbf",
+      "C": 20,
+      "epsilon": 0.05,
+      "gamma": 0.05
+    },
+    "gb": {
+      "n_estimators": 100,
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "random_state": 42
+    }
+  }
+}
