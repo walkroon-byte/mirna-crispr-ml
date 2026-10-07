@@ -1,0 +1,10 @@
+{
+  "model_version": "v7_public_only_simple",
+  "data_source": "Public datasets only (no ViennaRNA features)",
+  "num_features": 10,
+  "train_metrics": {
+    "spearman_r": 0.8746717367649067,
+    "r2": 0.7411432266235352,
+    "rmse": 0.10585840970827425,
+    "mae": 0.08023406565189362,
+    "predictions": 
