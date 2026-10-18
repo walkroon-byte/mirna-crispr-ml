@@ -1,0 +1,88 @@
+{
+  "model_version": "v7_public_only_optimized",
+  "trained_at_utc": "2026-10-17T04:23:41.817395+00:00",
+  "data_file": "data\\processed_public_datasets\\combined_v4_training_data_cleaned_exclude_unverified80.csv",
+  "n_rows": 9894,
+  "n_spacer_groups": 1355,
+  "n_features": 505,
+  "split_method": "Nested GroupShuffleSplit by canonical first-20-nt spacer; seed 42",
+  "split_rows": {
+    "train": 6871,
+    "validation": 1502,
+    "test": 1521
+  },
+  "split_groups": {
+    "train": 947,
+    "validation": 204,
+    "test": 204
+  },
+  "candidate_validation_metrics": {
+    "extra_trees_leaf2": {
+      "n": 1502,
+      "spearman_r": 0.4809879908900384,
+      "spearman_p": 8.461360656760107e-88,
+      "pearson_r": 0.4361990472832058,
+      "pearson_p": 8.477058720795455e-71,
+      "r2": 0.09242134945388225,
+      "rmse": 0.1962883060829874,
+      "mae": 0.15319810341347848
+    },
+    "extra_trees_leaf5": {
+      "n": 1502,
+      "spearman_r": 0.48609173612213014,
+      "spearman_p": 6.677126860041512e-90,
+      "pearson_r": 0.44557339848133465,
+      "pearson_p": 3.774842292822734e-74,
+      "r2": 0.12163588724115026,
+      "rmse": 0.19310325007953746,
+      "mae": 0.15232174529564735
+    },
+    "random_forest_leaf2": {
+      "n": 1502,
+      "spearman_r": 0.5487877630321143,
+      "spearman_p": 7.133993312726215e-119,
+      "pearson_r": 0.5192116609119714,
+      "pearson_p": 1.8917162661439187e-104,
+      "r2": 0.25130224958912784,
+      "rmse": 0.17828120289999386,
+      "mae": 0.14353800968848396
+    },
+    "hist_gradient_300": {
+      "n": 1502,
+      "spearman_r": 0.5770866986382533,
+      "spearman_p": 4.2873503255977305e-134,
+      "pearson_r": 0.5439639817771551,
+      "pearson_p": 2.017432036775173e-116,
+      "r2": 0.28484621993772885,
+      "rmse": 0.17424166437033106,
+      "mae": 0.1381722221726149
+    },
+    "hist_gradient_600": {
+      "n": 1502,
+      "spearman_r": 0.5737315501479896,
+      "spearman_p": 3.2727060119157697e-132,
+      "pearson_r": 0.5466191967786818,
+      "pearson_p": 9.127548983757958e-118,
+      "r2": 0.28661725109765135,
+      "rmse": 0.1740257816388211,
+      "mae": 0.13813769220515656
+    }
+  },
+  "selected_model": "hist_gradient_300",
+  "test_metrics": {
+    "n": 1521,
+    "spearman_r": 0.5930214762346857,
+    "spearman_p": 3.929807760821451e-145,
+    "pearson_r": 0.5710325309126698,
+    "pearson_p": 2.4142579716552806e-132,
+    "r2": 0.32437419292848757,
+    "rmse": 0.17066860730173386,
+    "mae": 0.13556765420921837
+  },
+  "feature_definition": "v7-compatible first 20 nt spacer/target one-hot (160) + positional mismatch mask (20) + mismatch-pair one-hot (320) + composition summary (5)",
+  "limitations": [
+    "Performance estimates generalization to unseen spacer sequences in this dataset; external validation remains necessary.",
+    "Dataset cleaning excludes the identified 80 rows but does not independently audit all remaining labels or source definitions.",
+    "The test set was used once after model selection on validation data."
+  ]
+}

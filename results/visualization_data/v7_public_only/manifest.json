@@ -1,0 +1,37 @@
+{
+  "schema_version": "v7_public_only_visualization_data_v1",
+  "generated_at_utc": "2026-10-18T02:13:18.227569+00:00",
+  "model_version": "v7_public_only",
+  "data_stage": "production_artifact_export",
+  "plot_stage_input_only": true,
+  "n_test_predictions": 1485,
+  "source_artifacts": {
+    "metrics_json": {
+      "path": "models\\v7_public_only\\v7_public_only_model_metrics.json",
+      "sha256": "a1b414bc37d0819d8155be7d2cc4d1a0ac1860284aae4a238635653e246e8cb2"
+    },
+    "test_predictions_csv": {
+      "path": "models\\v7_public_only\\v7_test_predictions.csv",
+      "sha256": "6f424b0c2c40b38cd6ace56dfc8821661c0f863cc2b8b23b56483a20be7d7217"
+    }
+  },
+  "derived_files": [
+    "test_predictions.csv",
+    "split_metrics.csv",
+    "calibration_bins.csv",
+    "absolute_error_ecdf.csv",
+    "residual_qq.csv"
+  ],
+  "training_history": {
+    "available": false,
+    "path": null,
+    "note": "Numeric training history was not present in the saved v7 artifact."
+  },
+  "processing_order": [
+    "read_saved_model_artifacts",
+    "validate_prediction_columns_and_residuals",
+    "derive_rank_error_and_calibration_tables",
+    "write_versioned_visualization_data",
+    "plot_from_visualization_data_only"
+  ]
+}

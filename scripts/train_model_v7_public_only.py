@@ -22,7 +22,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from scipy.stats import spearmanr, pearsonr
-import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -473,72 +472,19 @@ def evaluate_model(model, X_seq, X_feat, y, dataset_name):
     }
 
 # ============================================================================
-# 可视化和保存
+# 保存训练产物
 # ============================================================================
 
-def plot_training_history(history, output_dir):
-    """绘制训练历史"""
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
-
-    # Loss 曲线
-    ax1 = axes[0]
-    ax1.plot(history.history['loss'], label='Training Loss', linewidth=2)
-    ax1.plot(history.history['val_loss'], label='Validation Loss', linewidth=2)
-    ax1.set_xlabel('Epoch', fontsize=12, fontweight='bold')
-    ax1.set_ylabel('Loss (MSE)', fontsize=12, fontweight='bold')
-    ax1.set_title('Training History - Loss', fontsize=13, fontweight='bold')
-    ax1.legend()
-    ax1.grid(alpha=0.3)
-
-    # MAE 曲线
-    ax2 = axes[1]
-    ax2.plot(history.history['mae'], label='Training MAE', linewidth=2)
-    ax2.plot(history.history['val_mae'], label='Validation MAE', linewidth=2)
-    ax2.set_xlabel('Epoch', fontsize=12, fontweight='bold')
-    ax2.set_ylabel('MAE', fontsize=12, fontweight='bold')
-    ax2.set_title('Training History - MAE', fontsize=13, fontweight='bold')
-    ax2.legend()
-    ax2.grid(alpha=0.3)
-
-    plt.tight_layout()
-    plt.savefig(output_dir / 'v7_public_only_training_history.png', dpi=300, bbox_inches='tight')
-    print(f"\n✓ 保存训练历史图: {output_dir / 'v7_public_only_training_history.png'}")
-    plt.close()
-
-def plot_predictions(y_test, y_pred, test_metrics, output_dir):
-    """绘制预测结果"""
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
-
-    # 散点图
-    ax1 = axes[0]
-    ax1.scatter(y_test, y_pred, alpha=0.5, s=30, edgecolors='black', linewidth=0.3)
-    lim = [min(y_test.min(), y_pred.min()) - 0.05,
-           max(y_test.max(), y_pred.max()) + 0.05]
-    ax1.plot(lim, lim, 'r--', linewidth=2, label='Perfect prediction')
-    ax1.set_xlabel('Actual Relative Activity', fontsize=12, fontweight='bold')
-    ax1.set_ylabel('Predicted Relative Activity', fontsize=12, fontweight='bold')
-    ax1.set_title(f'v7 Model Performance - Public Data Only (Test Set)\n' +
-                  f'Spearman ρ = {test_metrics["spearman_r"]:.3f}, ' +
-                  f'R² = {test_metrics["r2"]:.3f}', fontsize=13)
-    ax1.legend()
-    ax1.grid(alpha=0.3)
-
-    # 残差图
-    ax2 = axes[1]
-    residuals = y_test - y_pred
-    ax2.scatter(y_pred, residuals, alpha=0.5, s=30, edgecolors='black', linewidth=0.3)
-    ax2.axhline(0, color='red', linestyle='--', linewidth=2)
-    ax2.set_xlabel('Predicted Relative Activity', fontsize=12, fontweight='bold')
-    ax2.set_ylabel('Residual', fontsize=12, fontweight='bold')
-    ax2.set_title(f'Residual Plot\n' +
-                  f'RMSE = {test_metrics["rmse"]:.4f}, ' +
-                  f'MAE = {test_metrics["mae"]:.4f}', fontsize=13)
-    ax2.grid(alpha=0.3)
-
-    plt.tight_layout()
-    plt.savefig(output_dir / 'v7_public_only_model_performance.png', dpi=300, bbox_inches='tight')
-    print(f"✓ 保存性能图: {output_dir / 'v7_public_only_model_performance.png'}")
-    plt.close()
+def save_training_history_data(history, output_dir):
+    """保存数值训练 history，供独立绘图脚本使用。"""
+    history_path = output_dir / "v7_public_only_training_history.json"
+    history_path.write_text(
+        json.dumps({key: [float(value) for value in values]
+                    for key, values in history.history.items()},
+                   indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"✓ 保存数值训练历史: {history_path}")
 
 def save_results(model, train_metrics, val_metrics, test_metrics, output_dir):
     """保存模型和结果"""
@@ -659,9 +605,8 @@ def main():
     val_metrics = evaluate_model(model, X_seq_val, X_feat_val, y_val, "验证")
     test_metrics = evaluate_model(model, X_seq_test, X_feat_test, y_test, "测试")
 
-    # 7. 可视化
-    plot_training_history(history, OUTPUT_DIR)
-    plot_predictions(y_test, test_metrics['predictions'], test_metrics, OUTPUT_DIR)
+    # 7. 保存数值训练产物；出版图由独立绘图流程生成
+    save_training_history_data(history, OUTPUT_DIR)
 
     # 8. 保存结果（修正版）
     test_metrics_with_y = test_metrics.copy()

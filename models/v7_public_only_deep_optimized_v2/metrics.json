@@ -1,0 +1,51 @@
+{
+  "model_version": "v7_public_only_deep_optimized_v2",
+  "trained_at_utc": "2026-10-17T09:35:21.075400+00:00",
+  "data_file": "data\\processed_public_datasets\\combined_v4_training_data_cleaned_exclude_unverified80.csv",
+  "n_rows": 9894,
+  "n_spacer_groups": 1355,
+  "split_method": "Grouped by spacer, seed 42",
+  "split_rows": {
+    "train": 6871,
+    "validation": 1502,
+    "test": 1521
+  },
+  "architecture": "aligned 20-position pair input: spacer 4 + target 4 + pair type 16 + mismatch flag; CNN+BiLSTM+20 features",
+  "training": "MSE, Adam 5e-4, batch 64, L2-free capacity-controlled network, early stopping and LR reduction",
+  "metrics": {
+    "train": {
+      "n": 6871,
+      "spearman_r": 0.8431860985829891,
+      "spearman_p": 0.0,
+      "pearson_r": 0.8360497951507568,
+      "pearson_p": 0.0,
+      "r2": 0.6845743656158447,
+      "rmse": 0.11695825087756512,
+      "mae": 0.08914986997842789
+    },
+    "validation": {
+      "n": 1502,
+      "spearman_r": 0.5819580981981956,
+      "spearman_p": 7.235368838806565e-137,
+      "pearson_r": 0.5516290068626404,
+      "pearson_p": 0.0,
+      "r2": 0.28605014085769653,
+      "rmse": 0.17409494367329612,
+      "mae": 0.13500118255615234
+    },
+    "test": {
+      "n": 1521,
+      "spearman_r": 0.5513180209539578,
+      "spearman_p": 1.1316424398440229e-121,
+      "pearson_r": 0.5253312587738037,
+      "pearson_p": 0.0,
+      "r2": 0.22219258546829224,
+      "rmse": 0.18312034037914407,
+      "mae": 0.1429404467344284
+    }
+  },
+  "limitations": [
+    "Grouped test estimates unseen-spacer generalization; external experimental validation remains necessary.",
+    "Remaining public labels were not independently re-audited beyond removing the identified 80 rows."
+  ]
+}

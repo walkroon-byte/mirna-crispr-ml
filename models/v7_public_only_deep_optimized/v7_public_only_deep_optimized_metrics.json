@@ -1,0 +1,55 @@
+{
+  "model_version": "v7_public_only_deep_optimized",
+  "trained_at_utc": "2026-10-17T04:42:32.680207+00:00",
+  "data_file": "data\\processed_public_datasets\\combined_v4_training_data_cleaned_exclude_unverified80.csv",
+  "n_rows": 9894,
+  "n_spacer_groups": 1355,
+  "split_method": "Nested GroupShuffleSplit by canonical first-20-nt spacer; seed 42",
+  "split_rows": {
+    "train": 6871,
+    "validation": 1502,
+    "test": 1521
+  },
+  "split_groups": {
+    "train": 947,
+    "validation": 204,
+    "test": 204
+  },
+  "architecture": "v7 CNN(64,128)+BiLSTM(64)+20 hand-crafted features; lower LR, Huber loss, clipnorm, L2/dropout",
+  "metrics": {
+    "train": {
+      "n": 6871,
+      "spearman_r": 0.8993031014153651,
+      "spearman_p": 0.0,
+      "pearson_r": 0.8968384265899658,
+      "pearson_p": 0.0,
+      "r2": 0.7968199849128723,
+      "rmse": 0.09386914847679452,
+      "mae": 0.06686226278543472
+    },
+    "validation": {
+      "n": 1502,
+      "spearman_r": 0.5784853197333272,
+      "spearman_p": 6.932590519626034e-135,
+      "pearson_r": 0.554244339466095,
+      "pearson_p": 0.0,
+      "r2": 0.2500382661819458,
+      "rmse": 0.17843164183826055,
+      "mae": 0.13521641492843628
+    },
+    "test": {
+      "n": 1521,
+      "spearman_r": 0.568346109163976,
+      "spearman_p": 7.577839656308828e-131,
+      "pearson_r": 0.5533277988433838,
+      "pearson_p": 0.0,
+      "r2": 0.22688519954681396,
+      "rmse": 0.18256711018235186,
+      "mae": 0.14090771973133087
+    }
+  },
+  "limitations": [
+    "Grouped test estimates unseen-spacer generalization; external experimental validation remains necessary.",
+    "Remaining public labels were not independently re-audited beyond removing the identified 80 rows."
+  ]
+}

@@ -4,6 +4,8 @@ data/nucleaseq/
 data/Cas12a_nickase/
 data/EasyDesign/
 data/processed_public_datasets/*.csv
+# Large extracted Sashital intermediate tables; regenerate with the processing script.
+data/processed_public_datasets/sashital/
 
 # Python 缓存
 __pycache__/
