@@ -1,0 +1,70 @@
+{
+  "model_version": "v7_public_only_25nt",
+  "trained_at_utc": "2026-10-24T09:17:26.455305+00:00",
+  "data_file": "data\\processed_public_datasets\\combined_v4_training_data_cleaned_exclude_unverified80.csv",
+  "data_sha256": "c86470ad8cc6bacc0d157a473881ac152789bd139399a419d1d362426b5e8697",
+  "n_rows": 9894,
+  "n_features": 643,
+  "sequence_length": 25,
+  "feature_definition": "25-nt spacer/target one-hot (200) + 25-position mismatch mask (25) + 25-position mismatch-pair one-hot (400) + 18 composition/position/ViennaRNA features = 643",
+  "actual_feature_count": 643,
+  "split_method": "Nested GroupShuffleSplit by complete 25-nt spacer; seed 42",
+  "split_rows": {
+    "train": 6871,
+    "validation": 1502,
+    "test": 1521
+  },
+  "split_groups": {
+    "train": 947,
+    "validation": 204,
+    "test": 204
+  },
+  "validation_metrics": {
+    "hist_gradient_300": {
+      "n": 1502,
+      "spearman_r": 0.6606563277728791,
+      "spearman_p": 4.820741898568753e-189,
+      "pearson_r": 0.634886310141905,
+      "pearson_p": 2.8019130308499457e-170,
+      "r2": 0.3949358783603414,
+      "rmse": 0.16027027888653778,
+      "mae": 0.12684531348103487
+    },
+    "hist_gradient_500": {
+      "n": 1502,
+      "spearman_r": 0.6538334921973529,
+      "spearman_p": 6.770031270033467e-184,
+      "pearson_r": 0.6281324801719805,
+      "pearson_p": 1.1852743210529901e-165,
+      "r2": 0.38578986975925345,
+      "rmse": 0.16147703984949352,
+      "mae": 0.12800204731746712
+    },
+    "random_forest_leaf3": {
+      "n": 1502,
+      "spearman_r": 0.6115730235618848,
+      "spearman_p": 8.839365707634665e-155,
+      "pearson_r": 0.5855210424021844,
+      "pearson_p": 6.33286119876772e-139,
+      "r2": 0.32819015117558137,
+      "rmse": 0.16887893250980088,
+      "mae": 0.1364475914247938
+    }
+  },
+  "selected_model": "hist_gradient_300",
+  "test_metrics": {
+    "n": 1521,
+    "spearman_r": 0.6348374221834608,
+    "spearman_p": 2.2400573623861995e-172,
+    "pearson_r": 0.6157009109162767,
+    "pearson_p": 2.1270868177516333e-159,
+    "r2": 0.3778391475494066,
+    "rmse": 0.16377660686091125,
+    "mae": 0.1286881627932726
+  },
+  "limitations": [
+    "This evaluates public labels after excluding the identified unverified records; remaining labels still require source-level audit.",
+    "The model predicts the dataset's relative_activity endpoint, not RT-RPA-Cas12a assay signal or miR-29a selectivity directly.",
+    "External wet-lab validation on miR-29a/b/c and correct PAM/amplicon architecture remains required."
+  ]
+}

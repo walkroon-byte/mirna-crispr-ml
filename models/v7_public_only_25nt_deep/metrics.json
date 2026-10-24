@@ -1,0 +1,68 @@
+{
+  "model_version": "v7_public_only_25nt_deep",
+  "trained_at_utc": "2026-10-24T09:27:23.381222+00:00",
+  "tensorflow_version": "2.22.0-rc0",
+  "data_file": "data\\processed_public_datasets\\combined_v4_training_data_cleaned_exclude_unverified80.csv",
+  "data_sha256": "c86470ad8cc6bacc0d157a473881ac152789bd139399a419d1d362426b5e8697",
+  "n_rows": 9894,
+  "sequence_length": 25,
+  "sequence_input_shape": [
+    25,
+    25
+  ],
+  "sequence_encoding": "25 aligned positions: spacer one-hot (4) + target one-hot (4) + base-pair identity one-hot (16) + mismatch flag (1)",
+  "feature_input_shape": [
+    18
+  ],
+  "feature_definition": "GC/composition, mismatch count and position bins, duplex delta-G, RNAfold MFE, homopolymer summaries",
+  "split_method": "Nested GroupShuffleSplit by complete 25-nt spacer; seed 42",
+  "split_rows": {
+    "train": 6871,
+    "validation": 1502,
+    "test": 1521
+  },
+  "split_groups": {
+    "train": 947,
+    "validation": 204,
+    "test": 204
+  },
+  "architecture": "25-position aligned-pair CNN + BiLSTM branch fused with 18-feature thermodynamic branch; regression output",
+  "best_epoch": 26,
+  "metrics": {
+    "train": {
+      "n": 6871,
+      "spearman_r": 0.8419010421974252,
+      "spearman_p": 0.0,
+      "pearson_r": 0.8383466005325317,
+      "pearson_p": 0.0,
+      "r2": 0.6686322093009949,
+      "rmse": 0.11987745195363289,
+      "mae": 0.09089730679988861
+    },
+    "validation": {
+      "n": 1502,
+      "spearman_r": 0.6422252384844841,
+      "spearman_p": 1.938836337403539e-175,
+      "pearson_r": 0.6127755045890808,
+      "pearson_p": 0.0,
+      "r2": 0.3403719663619995,
+      "rmse": 0.16734080705628346,
+      "mae": 0.12797494232654572
+    },
+    "test": {
+      "n": 1521,
+      "spearman_r": 0.6147560760137718,
+      "spearman_p": 8.819986557805791e-159,
+      "pearson_r": 0.585172176361084,
+      "pearson_p": 0.0,
+      "r2": 0.23106169700622559,
+      "rmse": 0.18207331363780127,
+      "mae": 0.13997411727905273
+    }
+  },
+  "limitations": [
+    "Metrics estimate generalization to unseen spacers within the cleaned EasyDesign dataset.",
+    "The target is the dataset relative_activity label, not RT-RPA-Cas12a signal or miR-29a selectivity.",
+    "Remaining public labels require source-level audit; wet-lab validation using miR-29a/b/c is required."
+  ]
+}
